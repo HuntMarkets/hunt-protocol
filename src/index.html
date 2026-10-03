@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hunt | Yes or No, priced in USDC</title>
+<meta name="description" content="Hunt turns one plain question into a two-sided market on Robinhood Chain. Pick Yes or No with USDC and watch the odds move.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/tokens.css">
+<link rel="stylesheet" href="/styles.css">
+<script type="module" src="/main.js"></script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <div class="ca-bar">
+    <div class="wrap ca-row">
+      <span class="ca-label">CA</span>
+      <div id="ca-slot" class="ca-slot" data-state="absent">
+        <span class="ca-text">Not stated yet</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap bar">
+    <a class="brand" href="#hero" aria-label="Hunt, back to top">
+      <img src="/favicon.svg" width="28" height="28" alt="">
+      <span>Hunt</span>
+    </a>
+    <div class="pill" id="pill" data-live="false"><i class="dot"></i><span id="pill-text">Connecting</span></div>
+    <nav class="socials" id="socials" aria-label="Social links"></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="rings" aria-hidden="true">
+      <svg viewBox="0 0 800 800" data-depth="0.12"><g fill="none" stroke="currentColor"><circle cx="400" cy="400" r="120"/><circle cx="400" cy="400" r="220" opacity=".7"/><circle cx="400" cy="400" r="320" opacity=".45"/><circle cx="400" cy="400" r="390" opacity=".25"/></g></svg>
+      <svg viewBox="0 0 800 800" class="rings-far" data-depth="0.28"><path d="M400 120 680 400 400 680 120 400Z" fill="none" stroke="currentColor" opacity=".35"/></svg>
+    </div>
+    <div class="wrap hero-in">
+      <p class="eyebrow reveal">Robinhood Chain &middot; id <span class="mono" data-rec="chainId">4663</span></p>
+      <h1 class="reveal">One question.<br>Two sides. Pick one.</h1>
+      <p class="lede reveal">Hunt turns a question about the real world into a market with a Yes side and a No side, paid in USDC. The price of each side is the crowd's running guess, and it shifts the moment the news does.</p>
+      <div class="cta reveal">
+        <a class="btn primary" href="#how">Start the Hunt</a>
+        <a class="btn ghost" href="#board">Watch the chain</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="tape" aria-label="Chain readout">
+    <div class="tape-track" id="tape"></div>
+  </div>
+
+  <div class="tape logos" id="logos" aria-label="Top tokens by liquidity" data-skel="1">
+    <div class="tape-track" id="logo-track"><div class="tape-set"><span class="logo-item"><span class="skeleton sk-dot"></span><span class="skeleton sk-txt"></span></span><span class="logo-item"><span class="skeleton sk-dot"></span><span class="skeleton sk-txt"></span></span><span class="logo-item"><span class="skeleton sk-dot"></span><span class="skeleton sk-txt"></span></span><span class="logo-item"><span class="skeleton sk-dot"></span><span class="skeleton sk-txt"></span></span></div></div>
+  </div>
+
+  <section class="sec" id="board">
+    <div class="wrap">
+      <h2 class="reveal">The ground beneath</h2>
+      <p class="sub reveal">Hunt settles on Robinhood Chain, so its pulse is worth a glance. Four readings from open public feeds; a dash means a feed is quiet.</p>
+      <div class="stats" id="stats">
+        <article class="card reveal"><h3>Value locked</h3><p class="num" id="s-tvl" data-skel="1"><span class="skeleton"></span></p><small>Across the chain, USD</small></article>
+        <article class="card reveal"><h3>Block height</h3><p class="num" id="s-block" data-skel="1"><span class="skeleton"></span></p><small>Latest sealed block</small></article>
+        <article class="card reveal"><h3>Gas price</h3><p class="num" id="s-gas" data-skel="1"><span class="skeleton"></span></p><small>Gwei, right now</small></article>
+        <article class="card reveal"><h3>Pools tracked</h3><p class="num" id="s-pairs" data-skel="1"><span class="skeleton"></span></p><small>With posted liquidity</small></article>
+      </div>
+
+      <h3 class="list-h reveal">Busiest pools</h3>
+      <div class="pairs reveal" id="pairs" role="table" aria-label="Busiest pools">
+        <div class="row head" role="row"><span role="columnheader">Pool</span><span role="columnheader" class="r">Price</span><span role="columnheader" class="r hide-s">Liquidity</span><span role="columnheader" class="r">24h</span></div>
+        <div class="row skel-row" data-skel="1"><span class="skeleton"></span></div>
+        <div class="row skel-row" data-skel="1"><span class="skeleton"></span></div>
+        <div class="row skel-row" data-skel="1"><span class="skeleton"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="how">
+    <div class="wrap">
+      <h2 class="reveal">From question to position</h2>
+      <ol class="steps">
+        <li class="card reveal"><b class="mono">01</b><h3>Ask</h3><p>Every market begins as a single sentence with a clear answer: will this happen, or won't it?</p></li>
+        <li class="card reveal"><b class="mono">02</b><h3>Side</h3><p>Choose Yes or No and back it with USDC. A side priced at sixty cents says the crowd leans sixty percent that way.</p></li>
+        <li class="card reveal"><b class="mono">03</b><h3>Follow</h3><p>Prices drift as headlines land. Keep an eye on every question you care about from one screen.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="register">
+    <div class="wrap">
+      <h2 class="reveal">On the record</h2>
+      <p class="sub reveal">Every outside fact lives in one register with a state. Nothing is shown as true until it is stated.</p>
+      <dl class="reg reveal" id="reg"></dl>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>Hunt &middot; <span data-rec="domain">hunt.markets</span></span>
+    <span class="mute">A losing side pays nothing. Back only what you can afford to lose.</span>
+  </div>
+</footer>
+</body>
+</html>

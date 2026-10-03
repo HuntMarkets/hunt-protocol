@@ -1,0 +1,52 @@
+/* The only file allowed to hold colour literals.
+ *
+ * PALETTE PROVENANCE: sampled from the supplied assets, not typed by eye.
+ * Method: k-means (Lloyd, k=3 on the logo files, k=6 on reference/HUNT 1), each centroid snapped to the
+ * nearest real pixel; coordinates are (x, y) in the source file.
+ *   rgb(130 243 13)   brand green   brand/LOGO HUNT PNG.png            @ (0, 0)       share 90.0%
+ *   rgb(110 226 5)    deep green    reference/HUNT 1.jpg.jpeg          @ (1161, 336)  share 4.2%
+ *   rgb(12 12 12)     ink           reference/HUNT 1.jpg.jpeg          @ (249, 51)    share 6.0%
+ *   rgb(254 254 254)  paper         reference/HUNT 1.jpg.jpeg          @ (354, 6)     share 71.9%
+ *   rgb(241 254 226)  mint wash     reference/HUNT 1.jpg.jpeg          @ (1368, 42)   share 9.5%
+ *   rgb(182 229 125)  soft green    reference/HUNT 1.jpg.jpeg          @ (1599, 744)  share 3.1%
+ * Notes: brand/LOGO HUNT PNG...png is RGBA colour type 6 with 224,459 of 250,000 sampled pixels at alpha 0 and
+ * RGB (0,0,0), so any resize of it is premultiplied (see favicon). Greys below are mixes of ink and paper.
+ */
+:root {
+  --c-brand: rgb(130 243 13);
+  --c-deep: rgb(110 226 5);
+  --c-ink: rgb(12 12 12);
+  --c-paper: rgb(254 254 254);
+  --c-wash: rgb(241 254 226);
+  --c-soft: rgb(182 229 125);
+
+  --c-bg: var(--c-paper);
+  --c-surface: var(--c-wash);
+  --c-card: var(--c-paper);
+  --c-line: color-mix(in srgb, var(--c-ink) 14%, var(--c-paper));
+  --c-mute: color-mix(in srgb, var(--c-ink) 58%, var(--c-paper));
+  --c-dim: color-mix(in srgb, var(--c-ink) 78%, var(--c-paper));
+  --c-text: var(--c-ink);
+  --c-accent: var(--c-brand);
+  --c-inv: var(--c-ink);
+  --c-shadow: rgb(12 12 12 / 0.14);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --d-fast: 0.2s;
+  --d-base: 0.42s;
+  --d-reveal: 0.9s;
+  --d-pulse: 1.4s;
+  --d-float: 4s;
+  --d-marquee: 48s;
+  --stagger: 90ms;
+
+  --tap: 48px;
+  --gutter: 16px;
+  --max: 1200px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
